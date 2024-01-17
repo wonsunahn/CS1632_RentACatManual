@@ -1,6 +1,6 @@
 - [CS 1632 - Software Testing](#cs-1632---software-testing)
   * [Description](#description)
-  * [Coffee Maker Quest](#coffee-maker-quest)
+  * [Rent-A-Cat System](#rent-a-cat-system)
   * [Create a Test Plan and a Traceability Matrix](#create-a-test-plan-and-a-traceability-matrix)
   * [Report Defects](#report-defects)
   * [Format](#format)
@@ -34,59 +34,62 @@ Test cases should mention all necessary preconditions, execution steps, and
 postconditions.  Please refer to [Exercise 1](../../exercises/1) on how to write
 good test cases.
 
-I expect you to test some **edge cases (at least one)** and some **corner
-cases (at least one)** as part of the test plan.  If you do this, I'd
-estimate that the number of test cases is at least 2x the number of
-requirements (22 in total).  If the number of test cases is more than 3x the
-number of requirements (33 in total), you are probably overtesting.
+I expect you to test **at least one edge case** and **at least one corner
+case** as part of the test plan.  Like the exercise, please make sure you test
+each requirement at least once so that you get **full requirements coverage**.
+Also, make sure that for each requirement, you cover **all behaviors** (equivalence
+classes).
 
-You are expected to execute the test plan in order to find the defects.  There
-are AT LEAST three.  Full credit will be given only to those who properly find
-and describe them.  While you are not expected to find all of the defects, a
-reasonable test plan should definitely find at least three.  This is an
-intentionally target-rich environment.
+You are also expected to find at least **three defects** in the system.  Please
+report and resolve them through the GitHub issues tracking system, just like
+you did for the exercise.
 
-## Coffee Maker Quest
+## Rent-A-Cat System
 
-Coffee Maker Quest is a simple game.  The goal is get coffee, sugar, and cream,
-and then drink it so that you can stay up and study.  In order to do so, you
-need to visit several rooms in a house and look around.  Once you have obtained
-all the necessary elements, you win.  If you decide to drink before getting all
-of the necessary elements, you lose.
+We are going to be testing the Rent-A-Cat system for the deliverable.
+Rent-A-Cat rents cats to customers for various needs (mousing, companionship,
+homework help, etc.).  From the main menu, users may:
 
-You can run it downloading the coffeemaker.jar file and running:
+1. See list of cats for rent
+2. Rent a cat to a customer
+3. Return a cat
+4. Rename a cat
+5. Quit
+
+A cat which is out for rental cannot be rented and will not be listed until it
+has been returned.  A cat that is unavailable cannot be renamed either until it
+hass been returned.
+
+You can run it using the rentacat.jar file included in the repository:
 ```
-bash$ java -jar coffeemaker.jar
+java -jar rentacat.jar
 ```
 
-Try playing around with the game a little bit to get a feel of it.
+Try playing around with the app a little bit to get a feel of it.
 
 ## Create a Test Plan and a Traceability Matrix
 
 Create a test plan and traceability matrix based on The requirements listed in
-the file [requirements.md](requirements.md).  Make sure you test each
-requirement at least once and each test case is testing some requirement.  Make
-sure you add some edge and corner cases to the mix.
+the file [requirements.md](requirements.md).  
 
 **Please apply everything you learned in Exercise 1 here.  Also, please try to
 avoid any of the pitfalls I discussed in the recorded lecture.**
 
 Now, there are a couple of things in the deliverable that you have to watch out
 for beyond what you did for the exercise.  They all stem from the fact that
-running Coffee Maker Quest typically involves a prolonged interaction between
-the program and the player while the player looks for items in the game.  The
-GoatGoatCar program for the exercise involved only a single-step interaction
-with the user where the user simply ran the program with a given set of
-commandline arguments.  These are the things that you need to watch out for
-when writing test cases:
+running Rent-A-Cat may involve a prolonged interaction between the program and
+the user.  The GoatGoatCar program for the exercise mostly involved only a
+single-step interaction with the user where the user simply ran the program
+with a given set of commandline arguments.  These are the things that you need
+to watch out for when writing test cases:
 
 1. EXECUTION STEPS: Since the execution steps now involves a prolonged
    interaction, it is even more important that they are crystal clear so all
 executions are repeatable.  Make sure that the interaction is divided into the
 smallest discrete steps possible and don't forget to **number** them (like in a
-recipe).  Also, make sure that each step is **unambiguous**.  For example, on a
-step that says "Go north", it is unclear what action the tester should perform.
-Instead if it says "Type N and press [Enter]", it is much easier to follow.
+recipe).  Also, make sure that each step is **unambiguous**.  For example, if a
+step says "Enter the ID 1 on the prompt", the tester may get confused on
+whether to type "ID 1" or "ID. 1" or just "1".
 
 2. POSTCONDITIONS: A postcondition is a condition that needs to be in place
    **after** having performed the execution steps (hence the prefix "post").
@@ -101,27 +104,24 @@ program.  If that jumbo test case fails, then it is unclear which part of your
 program failed and what requirement is not working (compared to many discrete
 test cases).  Also, if that jumbo test case fails somewhere in the middle, that
 means you will not be testing things later on in the test case, which creates
-artificial dependencies between things you would like to test.  We learned the
-importance of independence when creating test cases in the lecture.  A test
-case should test one behavior at a time and all the preconditions and execution
-steps should all be preparation to test that one behavior.
+artificial dependencies between test scenarios.  We learned the importance of
+independence when creating test cases in the lecture.  A test case should test
+one behavior at a time and all the preconditions and execution steps should all
+be preparation to test that one behavior.
 
 3. PRECONDITIONS: You may be tempted to set as the precondition some state
-   after a prolonged interaction with the program.  For example in Coffee Maker
-Quest, when testing FUN-DRINK, the outcome of drinking will differ depending on
-the state of the inventory at that point.  So you may be tempted to set as a
-precondition "has coffee, cream, and sugar", or "has no items", depending on
+   after a prolonged interaction with the program.  For example in Rent-A-Cat,
+when testing FUN-2-RENT-COMMAND , the outcome of the rent command will differ depending
+on the availability of cats at that point.  So you may be tempted to set as a
+precondition "Cat ID 1 is rented out", or "Cat ID 1 is available", depending on
 what you want to test.  This can cause problems with reproducibility.
 
-   Suppose the precondition is "has coffee, cream, and sugar".  There are a
-zillion ways in which the player could have ended up with those items.  The
-player could have acquired the items in different orders.  The player could
-have taken the shortest path to acquire those items, or he/she could have taken
-a detour.  Will drinking reproduce the same outcome regardless?  That depends
-on how you wrote the program.  The order in which you acquire the items or what
-path you took (or who-knows-what-else) may have an impact.
-
-   Therefore, per the discussion in the test plans lecture, whenever the
+   Suppose the precondition is "Cat ID 1 is rented out".  There are a zillion
+ways in which the player could have ended up in that state.  The player could
+have rented out and returned cat any number of times previously.  And, maybe
+that history matters... who knows?  Also that precondition does not mention
+anything about the state of other cats.  In theory, it should not matter, but
+who knows?  Therefore, per the discussion in the test plans lecture, whenever the
 preconditions include some internal program state of the system under test,
 that state is more reliably reproduced if instead those preconditions are
 expressed in terms of execution steps that achieve that state.  So, instead of
@@ -129,36 +129,27 @@ the following:
 
    ```
    PRECONDITIONS:
-   The player has gathered coffee, cream, and sugar.
+   - Cat ID 1 is rented out.
+   ...
 
    EXECUTION STEPS:
-     1. Type "D [Enter]" at prompt
+     1. Type "2[Enter]" at prompt for command.
+     2. Type "1[Enter]" at prompt for cat ID.
    ```
 
    The following is far superior in terms of reproducibility:
 
    ```
    PRECONDITIONS:
-   - Java version "11.0.21" is set up on the PATH (verifiable using "java -version").
-   - The program coffeemaker.jar is installed in the current directory.
-   - The file rooms.config is installed in the current directory.
-   - The game has been launched using the commandline: "java -jar coffeemaker.jar".
+   - All the requisite preconditions for running the app.
      ...
 
    EXECUTION STEPS:
-     1. Type "L [Enter]" at prompt
-     2. Type "N [Enter]" at prompt
-     ... all the steps required to collect all items ...
-     10. Type "D [Enter]" at prompt
+     1. Launch the app by typing "java -jar rentacat.jar[Enter]" on the commandline.
+     ... steps required to rent out cat ID 1...
+     4. Type "2[Enter]" at prompt for command.
+     5. Type "1[Enter]" at prompt for cat ID.
    ```
-
-   Note the rooms.config file in the preconditions.  By including that file
-as part of the precondition, you can perform testing based on that
-particular room layout.  Please consider the rooms.config file as part of
-the system-under-test (SUT).  It is part of the system just as
-coffeemaker.jar is part of the system.  That means you would not modify
-rooms.config for testing purposes, just like you would not modify
-coffeemaker.jar.
 
 ## Report Defects
 
