@@ -1,45 +1,39 @@
-Requirements for Coffee Maker Quest
+Requirements for Rent-A-Cat
 
-FUN-CONFIG - Upon launch, the system shall read in the rooms.config JSON file
-in the current directory to initialize rooms in the map.  The rooms shall be
-laid out from south to north, starting from the first room.  The player shall
-start out at the first southernmost room.
+FUN-PROMPT - Upon launch, the system shall display a prompt showing 5 commands:
+1, 2, 3, 4, and 5.  The prompt shall accept one of the numerical commands.  If
+the user inputs a string other than those commands, a list of all five
+available commands and their respective functionalities shall be displayed.
 
-FUN-NORTH - Upon entering "N" for North, the player shall move to the room to
-the north, if a door exists to the north.  If a door does not exist to the
-north, the move shall be disallowed with the message: "A door in that direction
-does not exist."
+FUN-1-LIST-COMMAND - Upon the user entering command "1" on the prompt, the
+system shall display all cats that are available (that is, not rented).
+Initially, there shall be 3 cats available: a cat with name "Jennyanydots" and
+ID 1, a cat with name "Old Deuteronomy" and ID 2, and a cat with name
+"Mistoffelees" and ID 3.
 
-FUN-SOUTH - Upon entering "S" for South, the player shall move to the room to
-the south, if a door exists to the south.  If a door does not exist to the
-south, the move shall be disallowed with the message: "A door in that direction
-does not exist."
+FUN-2-RENT-COMMAND - Upon the user entering command "2" on the prompt, the
+system shall ask the user the ID of the cat to rent.  Upon the user entering an
+ID, if the cat with the ID is available, the cat shall be rented out and the
+system shall inform the user of that fact.  If the cat with the ID is not
+available, the sytem shall inform the user that the cat is not here.
 
-FUN-LOOK - Upon entering "L" for Look, the player shall collect any items in
-the room and those items shall be added to the player's inventory.  If an item
-is already in the player's inventory, the inventory shall not change.
+FUN-3-RETURN-COMMAND - Upon the user entering command "3" on the prompt, the
+system shall ask the user the ID of the cat to return.  Upon the user entering
+an ID, if the cat with the ID is rented out, the cat shall be returned and the
+system shall welcome back the cat.  If the cat with the ID is not rented out,
+the sytem shall inform the user that the cat is already here.
 
-FUN-INVENTORY - Upon entering "I" for inventory, the player shall be informed
-of the items that he/she has already collected (consisting of Coffee, Sugar, or
-Cream).
+FUN-4-RENAME-COMMAND - Upon the user entering command "4" on the prompt, the
+system shall ask the user the ID of the cat to rename, and subsequently the new
+name for the cat.  If the cat with the ID is available, the system shall
+perform the name change and greet the cat with the new name.  If the cat with
+the ID is rented out, the system shall inform the user that the cat is not here
+and not perform the name change.
 
-FUN-DRINK - Upon entering "D" for Drink, the player shall drink the beverage
-made from ingredients in the inventory.  The player shall win the game if and
-only if Coffee, Sugar, and Cream are all in the inventory.  Otherwise, drinking
-shall result in the player losing the game.
+FUN-5-QUIT-COMMAND - Upon the user entering command "4" on the prompt, the
+system shall inform the user that it is closing up shop and then shut down.
 
-FUN-HELP - Upon entering "H" for Help, the player shall be shown a listing of
-possible commands ("N", "S", "L", "I", "H", "D") and what their effects are.
-
-FUN-LOWERCASE-COMMANDS - The player shall be able to enter lowercase commands
-"n", "s", "l", "i", "h", "d" with the same effect as their uppercase
-counterparts "N", "S", "L", "I", "H", "D" respectively.
-
-FUN-UNKNOWN-COMMAND - If a player enters an unspecified command, the system
-shall respond with the phrase "What?".
-
-FUN-UNIQ-ROOM - Each room in the house shall have a unique adjective describing
-it, visible to the user upon entering the room.
-
-FUN-UNIQ-ROOM-FURNISHING - Each room in the house shall have one and only one
-unique furnishing visible to the user upon entering the room.
+FUN-INVALID-CAT-ID - If the user, when prompted for a cat ID, enters a string
+that is not a valid cat ID (a number greater than or equal to 1 and less than
+or equal to 3), then the system shall respond with the string "Invalid cat
+ID.".
