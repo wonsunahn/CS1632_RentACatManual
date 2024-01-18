@@ -193,8 +193,8 @@ with the 3 open issues.
 
 ## Grading
 
-* Introduction: 10% of grade
-* Test Plan: 40% of grade
+* Introduction: 20% of grade
+* Test Plan: 30% of grade
 * Traceability Matrix: 20% of grade
 * Defects Reported: 30% of grade
 
