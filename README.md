@@ -13,7 +13,7 @@ Spring Semester 2024
 
 * DUE: February 6 (Tuesday), 2024 before start of class
 
-**GitHub Classroom Link:** TBD
+**GitHub Classroom Link:** https://classroom.github.com/a/hV4r4q1f
 
 ## Description
 
@@ -193,8 +193,8 @@ with the 3 open issues.
 
 ## Grading
 
-* Introduction: 10% of grade
-* Test Plan: 40% of grade
+* Introduction: 20% of grade
+* Test Plan: 30% of grade
 * Traceability Matrix: 20% of grade
 * Defects Reported: 30% of grade
 
@@ -213,7 +213,7 @@ Traceability Matrix, 3. Test Cases, and 4. Defects.
 
 Each pairwise group will do a shared submission to the **Deliverable 1**
 GradeScope link in the manner described on Exercise 1.  Make sure that your
-partner is added, or he/she will not get a grade!
+partner is added, or he/she/they will not get a grade!
 
 ## Groupwork Plan
 
