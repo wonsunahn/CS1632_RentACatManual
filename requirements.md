@@ -1,6 +1,6 @@
 Requirements for Rent-A-Cat
 
-FUN-PROMPT - Upon launch, the system shall display a prompt showing 5 commands:
+FUN-COMMAND-PROMPT - Upon launch, the system shall display a prompt showing 5 commands:
 1, 2, 3, 4, and 5.  The prompt shall accept one of the numerical commands.  If
 the user inputs a string other than those commands, a list of all five
 available commands and their respective functionalities shall be displayed.
