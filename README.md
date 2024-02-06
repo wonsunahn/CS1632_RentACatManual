@@ -17,9 +17,9 @@ Spring Semester 2024
 
 ## Description
 
-For this assignment, your group will determine a test plan for the simple game
-Coffee Maker Quest, based on the requirements listed.  There are several known
-**defects** in the software; you will need to find and report on **at least three**.
+For this assignment, your group will determine a test plan for the Rent-A-Cat
+system , based on the requirements listed.  There are several known **defects**
+in the software; you will need to find and report on **at least three**.
 Additionally, a traceability matrix showing the mapping of test cases to
 requirements is required.
 
@@ -189,7 +189,7 @@ format -
 	POSTCONDITIONS:
 
 ON A NEW PAGE, copy and paste the link to your GitHub repository issues page
-with the 3 open issues.
+with the 3 closed issues.
 
 ## Grading
 
