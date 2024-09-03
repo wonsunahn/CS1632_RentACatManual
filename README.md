@@ -9,11 +9,17 @@
   * [Groupwork Plan](#groupwork-plan)
 
 # CS 1632 - Software Testing
-Summer Semester 2024
+Fall Semester 2024
 
-* DUE: July 9 (Tuesday), 2024 before start of class
+* DUE: September 23 (Monday), 2024 before start of class
 
 **GitHub Classroom Link:** TBD
+
+This is going to be your first group assignment.  When you click on the GitHub
+Classroom link, you will be asked to either create a new team or join an
+existing team.  Please use the team name that you listed on the Partnership
+Contract.  If your partner already created a team, join that team rather than
+create a new one.
 
 ## Description
 
@@ -217,7 +223,9 @@ partner is added, or he/she/they will not get a grade!
 
 ## Groupwork Plan
 
-Please create a shared online document for the report just like you did for
-Exercise 1.  Divide the requirements up between the two of you in a sensible
-way as in Exercise 1.  Once you are done, check each other's work, discuss, and
-submit!
+I suggest that you create a shared document that both of you can work on using
+Google Docs or Microsoft OneDrive or your preferred cloud service.  Divide the
+requirements up between the two of you in a sensible way.  Once you are done,
+check each other's work, discuss, and submit!  In order to leave time for
+discussion, I strong suggest you complete the work at least 2 days before the
+deadline.
