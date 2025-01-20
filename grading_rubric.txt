@@ -10,32 +10,31 @@ One edge case clearly described:                   ____ / 5
 
 One corner case clearly described:                 ____ / 5
 
-* Test Plan: 30% of grade
+* Traceability Matrix: 15% of grade
+
+>= 1 Test case per requirement:                    ____ / 5
+
+Test case postconditions check given requirements: ____ / 10
+
+* Equivalence Class Coverage:                      ____ / 15
+
+* Test Cases: 20% of grade
 
 Preconditions include all state
 needed for reproducibility:                        ____ / 5
 
 Execution steps are numbered and
-clearly delineated:                                ____ / 5
+clearly described:                                 ____ / 5
 
-Postconditions result in no
-false positive defects:                            ____ / 5
+Pitfall 1: Using Observed Behavior for Postcondition
+(no false positive defects):                       ____ / 5
 
-Postconditions describe expected behavior
-given the context and not merely requirements:     ____ / 5
+Pitfall 2: Using Requirement for Postcondition
+(does not ask tester to derive expected behavior): ____ / 5
 
-Test cases check all behaviors
-(equivalence classes):                             ____ / 10
-
-* Traceability Matrix: 20% of grade
-
->= 1 Test case per requirement:                    ____ / 10
-
-Test case postconditions check given requirements: ____ / 10
+Other Pitfalls we learned in class:                ____ / 0 (appropriate deductions for each pitfall)
 
 * Defects Found and Described: 30% of grade
-
-Must be >= 3 defects! 10% off for each missing one.
 
 Defects are Reproducible:                          ____ / 10
 (-5 if preconditions missing)
@@ -44,6 +43,8 @@ Observed behavior shows program
 behavior verbatim to help debugging:               ____ / 10
 
 Defects properly routed through GitHub issues:     ____ / 10
+
+>= 3 defects found:                                ____ / 0 (-10 deduction for each missing defect)
 
 ***
 

@@ -9,11 +9,11 @@
   * [Groupwork Plan](#groupwork-plan)
 
 # CS 1632 - Software Testing
-Fall Semester 2024
+Spring Semester 2025
 
-* DUE: September 23 (Monday), 2024 before start of class
+* DUE: February 11 (Tuesday), 2025 before start of class
 
-**GitHub Classroom Link:** https://classroom.github.com/a/GCT23QB-
+**GitHub Classroom Link:** TBD
 
 This is going to be your first group assignment.  When you click on the GitHub
 Classroom link, you will be asked to either create a new team or join an
@@ -23,32 +23,16 @@ create a new one.
 
 ## Description
 
-For this assignment, your group will determine a test plan for the Rent-A-Cat
-system , based on the requirements listed.  There are several known **defects**
-in the software; you will need to find and report on **at least three**.
-Additionally, a traceability matrix showing the mapping of test cases to
-requirements is required.
+The parameters of this assignment are identical to that of [Exercise
+1](../../exercises/1).  Please review the Exercise 1 README carefully as well
+as the feedback you received from your submission, if there was any.
 
-Each requirement should have AT LEAST one test case associated with it in order
-to have good test coverage.  Each test case should have AT LEAST one
-requirement associated with it (no orphaned test cases).  One test case may
-happen to test more than one requirement using a single set of inputs, and that
-is fine.  The above can easily be checked via a traceability matrix (which you
-should also deliver).
-
-Test cases should mention all necessary preconditions, execution steps, and
-postconditions.  Please refer to [Exercise 1](../../exercises/1) on how to write
-good test cases.
-
-I expect you to test **at least one edge case** and **at least one corner
-case** as part of the test plan.  Like the exercise, please make sure you test
-each requirement at least once so that you get **full requirements coverage**.
-Also, make sure that for each requirement, you cover **all behaviors** (equivalence
-classes).
-
-You are also expected to find at least **three defects** in the system.  Please
-report and resolve them through the GitHub issues tracking system, just like
-you did for the exercise.
+Just like for Exercise 1, you will create a test plan with associated
+traceability matrix and then find, report, and route at least three defects
+through the GitHub issues system.  Just like for the exercise, you are asked to
+cover all program behaviors using your knowledge of equivalence classes, and
+also include at least one edge case and one corner case as part of your testing
+in addition to base cases.
 
 ## Rent-A-Cat System
 
@@ -84,38 +68,9 @@ avoid any of the pitfalls I discussed in the recorded lecture.**
 Now, there are a couple of things in the deliverable that you have to watch out
 for beyond what you did for the exercise.  They all stem from the fact that
 running Rent-A-Cat may involve a prolonged interaction between the program and
-the user.  The GoatGoatCar program for the exercise mostly involved only a
-single-step interaction with the user where the user simply ran the program
-with a given set of commandline arguments.  These are the things that you need
-to watch out for when writing test cases:
+the user.  
 
-1. EXECUTION STEPS: Since the execution steps now involves a prolonged
-   interaction, it is even more important that they are crystal clear so all
-executions are repeatable.  Make sure that the interaction is divided into the
-smallest discrete steps possible and don't forget to **number** them (like in a
-recipe).  Also, make sure that each step is **unambiguous**.  For example, if a
-step says "Enter the ID 1 on the prompt", the tester may get confused on
-whether to type "ID 1" or "ID. 1" or just "1".
-
-2. POSTCONDITIONS: A postcondition is a condition that needs to be in place
-   **after** having performed the execution steps (hence the prefix "post").
-Now, if you have many execution steps as part of a prolonged interaction, you
-may be tempted to check a condition mid-way through the steps (let's call these
-"mid-conditions").  In effect, you would be checking multiple things throughout
-the steps of a single test case.  This is a clear sign that you are trying to
-merge multiple test cases into a single test case.  If you take this to the
-extreme, you may end up with just a single jumbo test case that tests
-everything about your program in one shot!  This is no way to test your
-program.  If that jumbo test case fails, then it is unclear which part of your
-program failed and what requirement is not working (compared to many discrete
-test cases).  Also, if that jumbo test case fails somewhere in the middle, that
-means you will not be testing things later on in the test case, which creates
-artificial dependencies between test scenarios.  We learned the importance of
-independence when creating test cases in the lecture.  A test case should test
-one behavior at a time and all the preconditions and execution steps should all
-be preparation to test that one behavior.
-
-3. PRECONDITIONS: You may be tempted to set as the precondition some state
+1. PRECONDITIONS: You may be tempted to set as the precondition some state
    after a prolonged interaction with the program.  For example in Rent-A-Cat,
 when testing FUN-2-RENT-COMMAND , the outcome of the rent command will differ depending
 on the availability of cats at that point.  So you may be tempted to set as a
@@ -157,13 +112,33 @@ the following:
      5. Type "1[Enter]" at prompt for cat ID.
    ```
 
+2. POSTCONDITIONS: A postcondition is a condition that needs to be in place
+   **after** having performed the execution steps (hence the prefix "post").
+Now, if you have many execution steps as part of a prolonged interaction, you
+may be tempted to check a condition mid-way through the steps (let's call these
+"mid-conditions").  In effect, you would be checking multiple things throughout
+the steps of a single test case.  This is a clear sign that you are trying to
+merge multiple test cases into a single test case.  If you take this to the
+extreme, you may end up with just a single jumbo test case that tests
+everything about your program in one shot!  This is no way to test your
+program.  If that jumbo test case fails, then it is unclear which part of your
+program failed and what requirement is not working (compared to many discrete
+test cases).  Also, if that jumbo test case fails somewhere in the middle, that
+means you will not be testing things later on in the test case, which creates
+artificial dependencies between test scenarios.  We learned the importance of
+independence when creating test cases in the lecture.  A test case should test
+one behavior at a time and all the preconditions and execution steps should all
+be preparation to test that one behavior.
+
 ## Report Defects
 
 Report at least 3 defects found using the test plan.
 
 **Again, please apply everything you learned in Exercise 1 here.**
 
-File the defect reports using the GitHub issues system as we did in Exercise 1.
+For each defect, open a GitHub issue, triage the issue, create a branch,
+resolve the issue through requirement modification, create a pull request, and
+close the issue by pulling the branch, just like we did for Exercise 1.
 
 ## Format
 
@@ -200,22 +175,24 @@ with the 3 closed issues.
 ## Grading
 
 * Introduction: 20% of grade
-* Test Plan: 30% of grade
-* Traceability Matrix: 20% of grade
-* Defects Reported: 30% of grade
+* Traceability Matrix: 15% of grade
+* Equivalence Class Coverage: 15% of grade
+* Test Plan: 20% of grade
+* Defects Reporting: 30% of grade
 
 Please review the [grading_rubric.txt](grading_rubric.txt) for details.
 
 ## Submission
 
 Please use the [ReportTemplate.docx](ReportTemplate.docx) file provided in this
-directory to write your report.  If you don't have a .docx compatible word processor,
-that's perfectly fine as long as you follow the same organization.  A PDF version of
-the file is at [ReportTemplate.pdf](ReportTemplate.pdf).  Please make sure that
-the intro, traceability matrix, test cases, and defects are on seperate pages.  You will
-be submitting to GradeScope in PDF format.  When you submit, you will be asked
-to assign pages in the PDF file to each rubric item: 1. Introduction, 2.
-Traceability Matrix, 3. Test Cases, and 4. Defects.
+directory to write your report.  If you don't have a .docx compatible word
+processor, that's perfectly fine as long as you follow the same organization.
+A PDF version of the file is at [ReportTemplate.pdf](ReportTemplate.pdf).
+Please make sure that the intro, traceability matrix, test cases, and defects
+are on seperate pages.  You will be submitting to GradeScope in PDF format.
+When you submit, you will be asked to assign pages in the PDF file to each
+rubric item: 1. Introduction, 2.  Traceability Matrix, 3. Equivalence Class
+Coverage, 4. Test Cases, and 5. Defects.
 
 Each pairwise group will do a shared submission to the **Deliverable 1**
 GradeScope link.  Make sure that your partner is added by clicking on the "View
