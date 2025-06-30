@@ -9,9 +9,9 @@
   * [Groupwork Plan](#groupwork-plan)
 
 # CS 1632 - Software Testing
-Spring Semester 2025
+Summer Semester 2025
 
-* DUE: February 11 (Tuesday), 2025 before start of class
+* DUE: July 8 (Tuesday), 2025 before start of class
 
 **GitHub Classroom Link:** TBD
 
