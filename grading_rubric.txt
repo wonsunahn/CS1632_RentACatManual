@@ -26,13 +26,13 @@ needed for reproducibility:                        ____ / 5
 Execution steps are numbered and
 clearly described:                                 ____ / 5
 
-Pitfall 1: Using Observed Behavior for Postcondition
+Avoids pitfall 1: Using Observed Behavior for Postcondition
 (no false positive defects):                       ____ / 5
 
-Pitfall 2: Using Requirement for Postcondition
+Avoids pitfall 2: Using Requirement for Postcondition
 (does not ask tester to derive expected behavior): ____ / 5
 
-Other Pitfalls we learned in class:                ____ / 0 (appropriate deductions for each pitfall)
+Avoids other pitfalls we learned in class:         ____ / 0 (appropriate deductions for each pitfall)
 
 * Defects Found and Described: 30% of grade
 
